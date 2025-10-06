@@ -9,6 +9,12 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
 libffi-dev liblzma-dev
 
+# Remove existing pyenv if present
+if [ -d "$HOME/.pyenv" ]; then
+    echo "==> Removing existing pyenv installation..."
+    rm -rf "$HOME/.pyenv"
+fi
+
 # --- Python via pyenv ---
 echo "==> Installing Python 3.13.7 via pyenv..."
 if ! command -v pyenv &> /dev/null; then
