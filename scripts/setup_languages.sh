@@ -2,6 +2,13 @@
 # Install and configure latest stable Python, Node.js, Java
 set -e
 
+echo "==> Installing build dependencies for Python..."
+sudo apt update
+sudo apt install -y build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+libffi-dev liblzma-dev
+
 # --- Python via pyenv ---
 echo "==> Installing Python 3.13.7 via pyenv..."
 if ! command -v pyenv &> /dev/null; then
