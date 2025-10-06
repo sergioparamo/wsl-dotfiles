@@ -66,10 +66,16 @@ if [ ! -d "$HOME/.sdkman" ]; then
 fi
 
 # Load SDKMAN
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Ensure SDKMAN is loaded
+if [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]; then
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+else
+    echo "SDKMAN initialization script not found!"
+    exit 1
+fi
 
 # Install JDK 25 if not installed
-if ! sdk list java | grep -q "25"; then
+if ! sdk current java | grep -q "25"; then
     sdk install java 25-open
 fi
 sdk default java 25-open
