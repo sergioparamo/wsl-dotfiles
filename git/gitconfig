@@ -1,0 +1,12 @@
+[user]
+    name = sergioparamo
+    email = sergio.paramo1997@gmail.com
+[color]
+    ui = auto
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+[credential]
+    helper = cache

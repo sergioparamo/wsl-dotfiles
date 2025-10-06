@@ -1,0 +1,28 @@
+add_newline = true
+
+[directory]
+truncation_length = 3
+
+[git_branch]
+symbol = "🌿 "
+
+[git_status]
+conflicted = "⚡"
+ahead = "⬆️ "
+behind = "⬇️ "
+staged = "✓"
+modified = "✗"
+untracked = "?"
+
+[nodejs]
+symbol = "⬢ "
+
+[python]
+symbol = "🐍 "
+
+[docker]
+symbol = "🐳 "
+
+[character]
+success_symbol = "[✔](green)"
+error_symbol = "[✖](red)"
