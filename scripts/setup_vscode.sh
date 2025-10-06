@@ -3,14 +3,20 @@ set -e
 
 echo "🖥️ Configuring VS Code..."
 
-# Install VS Code (if not present)
+# Install VS Code if not present
 if ! command -v code &> /dev/null; then
-    wget -qO- https://update.code.visualstudio.com/latest/linux-deb-x64/stable | sudo dpkg -i /dev/stdin || sudo apt --fix-broken install -y
+    TMP_DEB=$(mktemp)
+    wget -qO "$TMP_DEB" https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+    sudo dpkg -i "$TMP_DEB" || sudo apt --fix-broken install -y
+    rm "$TMP_DEB"
 fi
 
-mkdir -p "$HOME/.config/Code/User"
+# Create VS Code user settings folder
+VSCODE_USER_DIR="$HOME/.config/Code/User"
+mkdir -p "$VSCODE_USER_DIR"
 
-cat > "$HOME/.config/Code/User/settings.json" << 'EOF'
+# Write settings.json
+cat > "$VSCODE_USER_DIR/settings.json" << 'EOF'
 {
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
   "editor.fontFamily": "Fira Code",
@@ -19,8 +25,9 @@ cat > "$HOME/.config/Code/User/settings.json" << 'EOF'
   "files.autoSave": "onFocusChange"
 }
 EOF
+echo "📄 VS Code settings.json configured"
 
-# Recommended extensions
+# Install recommended extensions
 extensions=(
   "eamodio.gitlens"
   "esbenp.prettier-vscode"
@@ -30,11 +37,11 @@ extensions=(
   "ms-vscode-remote.remote-containers"
   "ms-vscode-remote.remote-ssh"
   "ms-vscode-remote.remote-ssh-edit"
-    
-pkief.material-icon-theme
+  "pkief.material-icon-theme"
 )
 for ext in "${extensions[@]}"; do
-    code --install-extension $ext || true
+    code --install-extension "$ext" || true
 done
+echo "✅ VS Code extensions installed"
 
-echo "✅ VS Code configured!"
+echo "🎉 VS Code setup complete!"
