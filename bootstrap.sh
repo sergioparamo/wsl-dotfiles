@@ -25,6 +25,9 @@ fi
 
 # Run main install script
 echo "⚙️ Running main install script..."
+
+cd $HOME/wsl-dotfiles
+
 bash "$DOTFILES_DIR/install.sh"
 
 echo "✅ Bootstrap complete!"
