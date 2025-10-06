@@ -54,6 +54,12 @@ nvm alias default 24.9.0
 echo "Node.js $(node -v) installed via nvm"
 
 # --- Java via SDKMAN ---
+# Install dependencies for SDKMAN
+echo "==> Installing dependencies for SDKMAN..."
+sudo apt update
+sudo apt install -y unzip zip curl git
+
+
 echo "==> Installing Java JDK 25 via SDKMAN..."
 if [ ! -d "$HOME/.sdkman" ]; then
     curl -s "https://get.sdkman.io" | bash
