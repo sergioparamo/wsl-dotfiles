@@ -4,6 +4,7 @@ A production-ready, idempotent WSL2 (Ubuntu) dotfiles repository tailored for fu
 
 Features
 - Zsh (Oh My Zsh) with autosuggestions, syntax-highlighting, zoxide, fzf integrations
+- Installs LTS versions of Node.js, Python, and Java
 - Starship prompt configured for Git, Node/Python/Docker indicators
 - Neovim (with Packer) preconfigured with LSPs, Treesitter, Telescope, Dracula theme
 - Git config template with helpful aliases
