@@ -3,6 +3,7 @@
 # =============================
 add_newline = true
 truncation_length = 3
+
 # =============================
 # Directory
 # =============================
@@ -25,9 +26,9 @@ style = "bold green"
 conflicted = "⚡"
 ahead = "⬆️ "
 behind = "⬇️ "
-staged = "✓"
+staged = "✅"
 modified = "✏️"
-deleted = "❌"
+deleted = "🗑️"
 untracked = "🆕"
 style = "bold yellow"
 
@@ -75,9 +76,10 @@ charging_symbol = "⚡"
 discharging_symbol = "🔌"
 style = "bold green"
 
+# =============================
+# Character
+# =============================
 [character]
-success_symbol = "[✔](green)"
-error_symbol = "[✖](red)"
-success_symbol = "❯"
-error_symbol = "❯"
+success_symbol = "✅"
+error_symbol = "❌"
 vicmd_symbol = "❮"
