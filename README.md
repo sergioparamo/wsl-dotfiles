@@ -1,6 +1,7 @@
 # WSL2 Dotfiles — Modern Zsh + Starship + Neovim
 
-A production-ready, idempotent WSL2 (Ubuntu) dotfiles repository tailored for full-stack development.
+A production-ready, idempotent WSL2 dotfiles repository tailored for full-stack development.
+Tested on Ubuntu 22.04.5 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
 
 Features
 - Zsh (Oh My Zsh) with autosuggestions, syntax-highlighting, zoxide, fzf integrations
