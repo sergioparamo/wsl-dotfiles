@@ -54,8 +54,8 @@ if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
     echo "🔧 Added ~/.local/bin to PATH"
 fi
 
-# Initialize zoxide in Zsh
+# Initialize zoxide in Zsh and silence warnings from other shells (since fish is called by default)
 if ! grep -q 'zoxide init zsh' "$ZSHRC"; then
-    echo 'eval "$(zoxide init zsh)"' >> "$ZSHRC"
+    echo 'eval "$(zoxide init zsh 2>/dev/null)"' >> "$ZSHRC"
     echo "🔧 zoxide initialized in $ZSHRC"
 fi
