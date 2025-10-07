@@ -15,6 +15,8 @@ Features
 
 Quick start
 
+(Make sure to replace the git credentials first)
+
 From a fresh WSL Ubuntu session run:
 
 ```bash
