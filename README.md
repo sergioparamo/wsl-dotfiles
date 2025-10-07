@@ -28,42 +28,6 @@ chmod +x *.sh scripts/*.sh
 ./install.sh
 ```
 
-Repository layout
-
-```
-wsl-dotfiles/
-├── README.md
-├── bootstrap.sh
-├── install.sh
-├── update.sh
-├── .gitconfig
-├── config/
-│   └── starship.toml
-├── nvim/
-│   └── init.lua
-├── zsh/
-│   ├── .zshrc
-│   └── zshrc.d/
-│       ├── aliases.zsh
-│       ├── plugins.zsh
-│       ├── fzf.zsh
-│       └── prompt.zsh
-├── .vscode/
-│   ├── settings.json
-│   └── extensions.json
-└── scripts/
-    ├── configure_zsh.sh
-    ├── setup_starship.sh
-    ├── setup_nvim.sh
-    ├── setup_git.sh
-    ├── setup_docker.sh
-    └── configure_vscode.sh
-```
-
-More
-- See the modular scripts in `scripts/` for idempotent installation steps.
-- Use `./update.sh` or `dotupdate` alias after first install to refresh everything.
-
 License
 
 MIT
