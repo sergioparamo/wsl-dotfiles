@@ -1,28 +1,83 @@
+# =============================
+# General
+# =============================
 add_newline = true
-
+truncation_length = 3
+# =============================
+# Directory
+# =============================
 [directory]
 truncation_length = 3
+truncate_to_repo = true
+style = "cyan"
 
+# =============================
+# Git Branch
+# =============================
 [git_branch]
 symbol = "🌿 "
+style = "bold green"
 
+# =============================
+# Git Status
+# =============================
 [git_status]
 conflicted = "⚡"
 ahead = "⬆️ "
 behind = "⬇️ "
 staged = "✓"
-modified = "✗"
-untracked = "?"
+modified = "✏️"
+deleted = "❌"
+untracked = "🆕"
+style = "bold yellow"
 
+# =============================
+# Node.js / npm
+# =============================
 [nodejs]
 symbol = "⬢ "
+style = "green"
 
+# =============================
+# Python / Virtualenv
+# =============================
 [python]
 symbol = "🐍 "
+style = "yellow"
 
+# =============================
+# Docker
+# =============================
 [docker]
 symbol = "🐳 "
+style = "blue"
+
+# =============================
+# Java
+# =============================
+[java]
+symbol = "☕ "
+style = "bright_yellow"
+
+# =============================
+# Time
+# =============================
+[time]
+format = "🕒 %H:%M:%S"
+style = "bold blue"
+
+# =============================
+# Battery
+# =============================
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "🔌"
+style = "bold green"
 
 [character]
 success_symbol = "[✔](green)"
 error_symbol = "[✖](red)"
+success_symbol = "❯"
+error_symbol = "❯"
+vicmd_symbol = "❮"
