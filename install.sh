@@ -4,7 +4,7 @@ set -e
 echo "🔧 Running main installation..."
 
 # Ensure scripts are executable
-chmod +x scripts/*.sh
+chmod +x *.sh scripts/*.sh
 
 # Run modular setup scripts
 for script in scripts/*.sh; do
