@@ -43,12 +43,19 @@ fi
 if ! command -v zoxide &> /dev/null; then
     echo "🐙 Installing zoxide..."
     curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-
-    # Initialize zoxide in Zsh
-    if ! grep -q 'zoxide init zsh' "$ZSHRC"; then
-        echo 'eval "$(zoxide init zsh)"' >> "$ZSHRC"
-        echo "🔧 zoxide initialized in $ZSHRC"
-    fi
 fi
 
-echo "✅ Starship and zoxide installed and configured!"
+# -----------------------------
+# Ensure ~/.local/bin is in PATH for zoxide
+# -----------------------------
+if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$ZSHRC"
+    export PATH="$HOME/.local/bin:$PATH"
+    echo "🔧 Added ~/.local/bin to PATH"
+fi
+
+# Initialize zoxide in Zsh
+if ! grep -q 'zoxide init zsh' "$ZSHRC"; then
+    echo 'eval "$(zoxide init zsh)"' >> "$ZSHRC"
+    echo "🔧 zoxide initialized in $ZSHRC"
+fi
