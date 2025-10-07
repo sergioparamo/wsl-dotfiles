@@ -24,7 +24,6 @@ Or, if you've copied this repo to `~/wsl-dotfiles`:
 
 ```bash
 cd ~/wsl-dotfiles
-chmod +x *.sh scripts/*.sh
 ./install.sh
 ```
 
