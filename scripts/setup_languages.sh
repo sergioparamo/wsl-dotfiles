@@ -43,22 +43,26 @@ echo "Python $(python --version) installed via pyenv"
 # Upgrade pip
 pip install --upgrade pip setuptools wheel
 
-# --- Node.js via NVM ---
-echo "==> Installing NVM v0.40.3 if not present..."
-export NVM_DIR="$HOME/.nvm"
-if [ ! -d "$NVM_DIR" ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-fi
+# --- Node.js and npm installation (latest LTS via NodeSource) ---
+echo "==> Installing Node.js (LTS) and npm..."
 
-# Load NVM for current session
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# Update system
+sudo apt-get update -y
 
-# Install Node.js 24.9.0 if not installed
-if ! nvm ls | grep -q "v24.9.0"; then
-    nvm install 24.9.0
-fi
-nvm alias default 24.9.0
-echo "Node.js $(node -v) installed via nvm"
+# Add NodeSource official repository for Node 22.x (LTS)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+
+# Install Node.js and npm
+sudo apt install -y nodejs npm
+
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Verify installation
+echo "==> Node.js $(node -v), npm $(npm -v) and nvm $(nvm -v) installed successfully"
 
 # --- Java via SDKMAN ---
 echo "==> Installing SDKMAN if not present..."
