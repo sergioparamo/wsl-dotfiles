@@ -2,7 +2,6 @@
 # General
 # =============================
 add_newline = true
-truncation_length = 3
 
 # =============================
 # Directory
@@ -74,7 +73,6 @@ style = "bold blue"
 full_symbol = "🔋"
 charging_symbol = "⚡"
 discharging_symbol = "🔌"
-style = "bold green"
 
 # =============================
 # Character
